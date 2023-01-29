@@ -1,0 +1,26 @@
+.bottom
+{
+    /* background-color: rgb(50, 53, 88); */
+    background-color: #283046;
+    height: auto;
+    margin: 2%;
+}
+.filter
+{
+    display: flex;
+}
+.filterPage
+{
+    display: flex;
+}
+.pagination
+{
+    
+    /* border: 1px solid yellow; */
+    /* background-color: #292D32; */
+    /* width: fit-content; */
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+}

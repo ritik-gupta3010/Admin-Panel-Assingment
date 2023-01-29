@@ -1,0 +1,25 @@
+.sidebar
+{
+    /* background-color: rgb(50, 53, 88); */
+    background-color: #283046;
+    height: auto;
+    flex: 2;
+}
+.list
+{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.listItem
+{
+    color: white;
+    list-style: none;
+    cursor: pointer;  
+    padding: 5% 2%;
+    display: flex;
+}
+.listPaddingLeft
+{
+    margin-left: 4%;
+    padding-top: -1%;
+}

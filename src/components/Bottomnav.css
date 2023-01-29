@@ -1,0 +1,16 @@
+.nav
+{
+    /* background-color: black; */
+    background-color: #271C1C;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    padding: 1.5%;
+    margin: 2%;
+    margin-top: 2%;
+    border: 1px solid #707070;
+}
+.navItem2
+{
+
+}

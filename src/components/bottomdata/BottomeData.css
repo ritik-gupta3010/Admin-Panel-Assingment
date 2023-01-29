@@ -1,0 +1,22 @@
+.bottomData
+{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 0% 2%;
+    width: 85%;
+    
+}
+.row
+{
+    display: flex;
+}
+.date
+{
+    /* padding-left: 2%; */
+}
+.line
+{
+    border-bottom: 1px solid #707070;
+    margin: 1%;
+}
