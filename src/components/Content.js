@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Content.css'
 import Top from "./top/index"
-import Bottom from "./bottom/Bottom"
+import Bottom from "./bottom/index"
 export class content extends Component {
   render() {
     return (

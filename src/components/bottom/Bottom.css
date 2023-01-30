@@ -4,20 +4,34 @@
     background-color: #283046;
     height: auto;
     margin: 2%;
+    color: white;
 }
 .filter
 {
     display: flex;
+    justify-content: space-between;
+    padding: 1% 2% 0%;
+    align-items: center;
+    
+    
 }
 .filterPage
 {
     display: flex;
+    width: 25%;
+    justify-content: space-between;
+    font-size: 30px;
+    align-items: center;
+}
+.filterDate
+{
+    margin-bottom: -30px;
 }
 .pagination
 {
     
-    /* border: 1px solid yellow; */
-    /* background-color: #292D32; */
+    /* border: 1px solid yellow; 
+    background-color: #292D32; */
     /* width: fit-content; */
     display: flex;
     justify-content: flex-end;

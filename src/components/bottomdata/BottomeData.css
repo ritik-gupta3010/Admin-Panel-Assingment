@@ -2,9 +2,9 @@
 {
     display: flex;
     color: white;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0% 2%;
-    width: 85%;
+    /* width: 85%; */
     
 }
 .row
@@ -19,4 +19,8 @@
 {
     border-bottom: 1px solid #707070;
     margin: 1%;
+}
+.data
+{
+    width: 125px;
 }
