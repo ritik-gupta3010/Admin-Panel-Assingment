@@ -2,29 +2,40 @@ import moment from 'moment';
 const initialState={
     top:{},
     bottom:{},
-    currentPageIndex:0,
     limit:50,
-    startD:0,
-    endD:0,
+    startD:"",
+    endD:"",
+    page:1
 }
 
 const reducer=(state=initialState,action)=>{
-
+    
     switch (action.type) {
+        
         case "FETCHTOPDATA":
             return {...state,top:action.data}
         case "FETCHBOTTOMDATA":
-            console.log(action.data)
+            // console.log(action.data)
             const {bottom}=state;
             const updatedBottomData=Object.assign({},bottom);
             let currentPage=action.data.data.current;
             updatedBottomData[currentPage]=action.data.data;
-            console.log(updatedBottomData)
+            // console.log(updatedBottomData)
             return {...state,bottom:updatedBottomData}
-        case "SET_DATA_LIMIT":
+        case "SET_LIMIT":
             return {...state,limit:action.data}
         case "SET_DATE":
-            return {...state,startD:action.data[0] && moment.utc(action.data[0].$d).format("YYYY-MM-DD"),endD:action.data[1] && moment.utc(action.data[1].$d).format("YYYY-MM-DD")}
+            console.log("start ",action.data && action.data[0])
+            console.log("start ",action.data && action.data[0] && moment(action.data[0].$d).format("YYYY-MM-DD"))
+            console.log("end",action.data && action.data[1])
+            console.log("end",action.data && action.data[1] && moment(action.data[1].$d).format("YYYY-MM-DD"))
+            return {
+                ...state,
+                startD:action.data && action.data[0] && moment(action.data[0].$d).format("YYYY-MM-DD"),
+                endD:action.data && action.data[1] && moment(action.data[1].$d).format("YYYY-MM-DD")
+            }
+        case "SETCURRPAGE":
+            return{...state,page:action.data}
         default:
             return state
     }

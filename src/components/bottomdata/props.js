@@ -1,7 +1,8 @@
 import { fetchBottomData } from "../../redux/actions/Action";
 
 const mapStateToProps=(state)=>({
-    reduxBottomVar:state.bottom
+    reduxBottomVar:state.bottom,
+    page:state.page
     
 })
 const mapDispatchToProps=(dispatch)=>({

@@ -12,8 +12,8 @@ export default class top extends Component {
     }
     render() {
     const {reduxTopVar}=this.props;
-    console.log(reduxTopVar);
-    console.log("top ",reduxTopVar.data);
+    // console.log(reduxTopVar);
+    // console.log("top ",reduxTopVar.data);
     return (
       <>
         <div className="top">

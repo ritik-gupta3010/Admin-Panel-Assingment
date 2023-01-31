@@ -7,7 +7,14 @@ import Stack from "@mui/material/Stack";
 import Datepicker from "../datePicker/Datepicker";
 // import { setDataLimit } from "../../redux/actions/Action";
 export class bottom extends Component {
+  handlePageChange=(e,value)=>{
+    const{page}=this.props;
+    this.props.setCurrentPage(value)
+    this.props.fetchBottomData(page);
+  }
   render() {
+    const {reduxBottomVar}=this.props;
+    console.log(reduxBottomVar && reduxBottomVar[1] &&reduxBottomVar[1].data && reduxBottomVar[1].pages)
     return (
       <>
         <div className="bottom">
@@ -30,8 +37,9 @@ export class bottom extends Component {
             </div>
             <div className="filterDate">
               <Datepicker 
-              setStartDate={this.props.setStartDate}
-              // setEndDate={this.props.setEndDate}
+              setDate={this.props.setDate}
+              fetchData={this.props.fetchBottomData}
+              page={this.props.page}
               />
             </div>
           </div>
@@ -47,7 +55,11 @@ export class bottom extends Component {
                 margin: "1% 0% 1% 1%",
               }}
             >
-              <Pagination count={10} color="secondary" />
+              <Pagination 
+              count={reduxBottomVar && reduxBottomVar[1] &&reduxBottomVar[1].data && reduxBottomVar[1].pages} 
+              color="secondary" 
+              onChange={()=>{this.handlePageChange()}}
+              />
             </Stack>
           </div>
         </div>

@@ -158,9 +158,7 @@ StaticRangeShortcutsPanel.propTypes = {
 export default function PaperContentComponent(props) {
   const [value, setValue] = React.useState([null, null]);
   // console.log(props);
-  props.setStartDate(value);
-  // props.setEndDate(value);
-  ;
+  props.setDate(value);
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={4} alignItems="center">
