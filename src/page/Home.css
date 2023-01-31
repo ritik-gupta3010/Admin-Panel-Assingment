@@ -3,6 +3,6 @@
     /* background-color: rgb(36, 24, 65); */
     /* background-color: rgb(28, 30, 49); */
     background-color: #161C32;
-    height: 100vh;
+    height: auto;
     display: flex;
 }
