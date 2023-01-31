@@ -5,4 +5,5 @@
     background-color: #161C32;
     height: auto;
     display: flex;
+    min-height: 100vh;
 }

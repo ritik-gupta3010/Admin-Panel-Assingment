@@ -5,16 +5,28 @@ import BottomData from "../bottomdata/index";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import Datepicker from "../datePicker/Datepicker";
+
+
 // import { setDataLimit } from "../../redux/actions/Action";
 export class bottom extends Component {
   handlePageChange=(e,value)=>{
-    const{page}=this.props;
-    this.props.setCurrentPage(value)
-    this.props.fetchBottomData(page);
+    const {setCurrentPage,fetchBottomData,fetchTopData}=this.props;
+    setCurrentPage(value)
+    fetchBottomData();
+    // fetchTopData();
+  }
+  handlePageLimit=(e)=>{
+    const{setDataLimit,fetchBottomData,fetchTopData}=this.props;
+    setDataLimit(e.target.value)
+    fetchBottomData();
+    // fetchTopData();
   }
   render() {
     const {reduxBottomVar}=this.props;
+    console.log()
+    const{setDate,fetchBottomData,page,fetchTopData}=this.props;
     console.log(reduxBottomVar && reduxBottomVar[1] &&reduxBottomVar[1].data && reduxBottomVar[1].pages)
+    console.log(reduxBottomVar)
     return (
       <>
         <div className="bottom">
@@ -24,10 +36,10 @@ export class bottom extends Component {
               <div >
                 <select name="" id="" 
                 style={{height: '30px'}}
-                onChange={(e)=>{this.props.setDataLimit(e.target.value)}}
+                onChange={(e)=>{this.handlePageLimit(e)}}
                 >
                   <option value="10">10</option>
-                  <option value="50">50</option>
+                  <option value="50" selected>50</option>
                   <option value="100">100</option>
                   <option value="500">500</option>
                   <option value="1000">1000</option>
@@ -37,16 +49,20 @@ export class bottom extends Component {
             </div>
             <div className="filterDate">
               <Datepicker 
-              setDate={this.props.setDate}
-              fetchData={this.props.fetchBottomData}
-              page={this.props.page}
+              setDate={setDate}
+              fetchTopData={fetchTopData}
+              fetchBottomData={fetchBottomData}
+              page={page}
               />
             </div>
           </div>
           <Bottomnav />
-          <BottomData />
-          
-          <div className="pagination">
+          {reduxBottomVar && reduxBottomVar[page] && reduxBottomVar[page].data.length!==0 ? 
+           reduxBottomVar && reduxBottomVar[page] && reduxBottomVar[page].data.map((data)=>(<BottomData particularData={data}/>))
+           :(<h1 style={{color:'red' ,textAlign:'center',paddingBottom:'20px'}}>No record found</h1>)
+          }
+          {reduxBottomVar && reduxBottomVar[page] && reduxBottomVar[page].data.length!==0 ?
+          (<div className="pagination">
             <Stack
               spacing={2}
               style={{
@@ -56,12 +72,12 @@ export class bottom extends Component {
               }}
             >
               <Pagination 
-              count={reduxBottomVar && reduxBottomVar[1] &&reduxBottomVar[1].data && reduxBottomVar[1].pages} 
+              count={reduxBottomVar && reduxBottomVar[page] &&reduxBottomVar[page].data && reduxBottomVar[page].pages} 
               color="secondary" 
-              onChange={()=>{this.handlePageChange()}}
+              onChange={(e,value)=>{this.handlePageChange(e,value)}}
               />
             </Stack>
-          </div>
+          </div>):null}
         </div>
       </>
     );

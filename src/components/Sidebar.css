@@ -4,6 +4,8 @@
     background-color: #283046;
     height: fit-content;
     flex: 2;
+    position: fixed;
+    width: 16%;
 }
 .list
 {

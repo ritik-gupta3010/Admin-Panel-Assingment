@@ -1,4 +1,4 @@
-import {setDataLimit,setDate,setCurrentPage,fetchBottomData } from "../../redux/actions/Action";
+import {setDataLimit,setDate,setCurrentPage,fetchBottomData,fetchTopData } from "../../redux/actions/Action";
 
 const mapStateToProps=(state)=>({
     reduxBottomVar:state.bottom,
@@ -6,7 +6,8 @@ const mapStateToProps=(state)=>({
     
 })
 const mapDispatchToProps=(dispatch)=>({
-    fetchBottomData:(currentPage)=>dispatch(fetchBottomData(currentPage)),
+    fetchTopData:()=>dispatch(fetchTopData()),
+    fetchBottomData:()=>dispatch(fetchBottomData()),
     setDataLimit:(limit)=>dispatch(setDataLimit(limit)),
     setDate:(date)=>dispatch(setDate(date)),
     setCurrentPage:(page)=>dispatch(setCurrentPage(page))

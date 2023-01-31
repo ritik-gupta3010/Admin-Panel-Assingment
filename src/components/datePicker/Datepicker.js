@@ -158,12 +158,19 @@ StaticRangeShortcutsPanel.propTypes = {
 export default function PaperContentComponent(props) {
   const [value, setValue] = React.useState([null, null]);
   // console.log(props);
-  props.setDate(value);
+  // props.setDate(value);
+  const handleDateChange = (newvalue) => {
+    // console.log(newvalue)
+    setValue(newvalue);
+    props.setDate(newvalue);
+    props.fetchTopData();
+    props.fetchBottomData();
+  }
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={4} alignItems="center">
         <DateRangePicker
-          onChange={(newValue) => setValue(newValue)}
+          onChange={(newValue) => handleDateChange(newValue)}
           value={value}
           renderInput={(startProps, endProps) => (
             
@@ -179,7 +186,7 @@ export default function PaperContentComponent(props) {
         />
         <StaticDateRangePicker
           displayStaticWrapperAs="desktop"
-          onChange={(newValue) => setValue(newValue)}
+          onChange={(newValue) => handleDateChange(newValue)}
           value={value}
           renderInput={() => <div />}
           components={{ PaperContent: StaticRangeShortcutsPanel }}

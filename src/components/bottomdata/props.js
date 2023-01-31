@@ -6,7 +6,7 @@ const mapStateToProps=(state)=>({
     
 })
 const mapDispatchToProps=(dispatch)=>({
-    fetchBottomData:(currentPage)=>dispatch(fetchBottomData(currentPage))
+    fetchBottomData:()=>dispatch(fetchBottomData())
 
 })
 
