@@ -19,9 +19,9 @@ export class Sidebar extends Component {
         <div className="sidebar" id="scrollBar">
           <ul className="list">
             <li className="listItem">
-              <div style={{ display: "flex" }}>
-                <DiamondIcon />
-                <div className="listPaddingLeft" style={{ color: "blue" }}>
+              <div style={{ display: "flex" ,alignItems: 'center'}}>
+                <DiamondIcon style={{fontSize: 'xx-large'}}/>
+                <div className="listPaddingLeft" style={{ color: "blue",fontSize: 'large' }}>
                   WOW
                 </div>
               </div>
