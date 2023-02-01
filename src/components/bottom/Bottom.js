@@ -10,13 +10,13 @@ import Datepicker from "../datePicker/Datepicker";
 // import { setDataLimit } from "../../redux/actions/Action";
 export class bottom extends Component {
   handlePageChange=(e,value)=>{
-    const {setCurrentPage,fetchBottomData,fetchTopData}=this.props;
+    const {setCurrentPage,fetchBottomData}=this.props;
     setCurrentPage(value)
     fetchBottomData();
     // fetchTopData();
   }
   handlePageLimit=(e)=>{
-    const{setDataLimit,fetchBottomData,fetchTopData}=this.props;
+    const{setDataLimit,fetchBottomData}=this.props;
     setDataLimit(e.target.value)
     fetchBottomData();
     // fetchTopData();
