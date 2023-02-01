@@ -5,12 +5,22 @@
     height: fit-content;
     flex: 2;
     position: fixed;
+    width: 100%;
+}
+.sidebar1
+{
+    /* background-color: rgb(50, 53, 88); */
+    background-color: #283046;
+    height: fit-content;
+    flex: 2;
+    position: fixed;
     width: 16%;
 }
 .list
 {
     padding-left: 10%;
     padding-right: 10%;
+    
 }
 .listItem
 {
@@ -24,4 +34,11 @@
 {
     margin-left: 4%;
     padding-top: -1%;
+}
+
+@media screen and (max-width:950px){
+    .sidebar1{
+        display: none;
+    }
+    
 }

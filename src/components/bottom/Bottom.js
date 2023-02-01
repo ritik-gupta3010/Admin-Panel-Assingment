@@ -7,7 +7,6 @@ import Stack from "@mui/material/Stack";
 import Datepicker from "../datePicker/Datepicker";
 
 
-// import { setDataLimit } from "../../redux/actions/Action";
 export class bottom extends Component {
   handlePageChange=(e,value)=>{
     const {setCurrentPage,fetchBottomData}=this.props;
@@ -16,8 +15,9 @@ export class bottom extends Component {
     // fetchTopData();
   }
   handlePageLimit=(e)=>{
-    const{setDataLimit,fetchBottomData}=this.props;
+    const{setDataLimit,fetchBottomData,setCurrentPage}=this.props;
     setDataLimit(e.target.value)
+    setCurrentPage(1);
     fetchBottomData();
     // fetchTopData();
   }
