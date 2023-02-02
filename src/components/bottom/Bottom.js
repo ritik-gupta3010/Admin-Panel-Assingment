@@ -8,6 +8,10 @@ import Datepicker from "../datePicker/Datepicker";
 
 
 export class bottom extends Component {
+  componentDidMount(){
+    const {fetchTopData}=this.props;
+    fetchTopData();
+}
   handlePageChange=(e,value)=>{
     const {setCurrentPage,fetchBottomData}=this.props;
     setCurrentPage(value)
