@@ -128,7 +128,7 @@ export class Sidebar extends Component {
               sx={{ textAlign: "center" }}
             >
               
-              <ul className="list" style={{backgroundColor: '#283046',marginTop:'0px',marginBottom:'0px',height:"100vh"}}>
+              <ul className="list" style={{backgroundColor: '#283046',marginTop:'0px',marginBottom:'0px',height:"100%"}}>
                 <li className="listItem">
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <DiamondIcon style={{ fontSize: "xx-large" }} />
