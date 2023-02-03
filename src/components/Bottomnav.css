@@ -10,10 +10,7 @@
     margin-top: 2%;
     border: 1px solid #707070;
 }
-@media screen and (max-width:650px){
-    .nav
-    {
-        padding: 0%;
-        
-    }
+.navItem2
+{
+
 }
