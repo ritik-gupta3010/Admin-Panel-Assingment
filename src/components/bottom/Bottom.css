@@ -42,10 +42,7 @@
     .filter{
         display: block;
     }
-    .filterPage
-    {
-        text-align: center;
-    }
+    
     .filterDate{
         display: block;
         margin-top: 15px;
