@@ -39,5 +39,12 @@
     margin-right: 0;
 }
 @media screen and (max-width:620px) {
+    .filter{
+        display: block;
+    }
     
+    .filterDate{
+        display: block;
+        margin-top: 15px;
+    }
 }
