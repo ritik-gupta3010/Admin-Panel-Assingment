@@ -10,7 +10,12 @@
     margin-top: 2%;
     border: 1px solid #707070;
 }
-.navItem2
+.navItem
 {
-
+    list-style: none;
+}
+@media screen and (max-width:620px) {
+    .navItem{
+        font-size: 10px;
+    }
 }
