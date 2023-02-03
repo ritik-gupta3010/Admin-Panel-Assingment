@@ -168,7 +168,7 @@ export default function PaperContentComponent(props) {
   }
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Stack spacing={4} alignItems="center">
+      <Stack spacing={4} alignItems="center" sx={{display:"block"}}>
         <DateRangePicker
           onChange={(newValue) => handleDateChange(newValue)}
           value={value}

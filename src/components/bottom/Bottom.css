@@ -18,7 +18,7 @@
 .filterPage
 {
     display: flex;
-    /* width: 25%; */
+    width: 25%;
     justify-content: space-between;
     font-size: 30px;
     align-items: center;
@@ -38,6 +38,17 @@
     margin-left: auto;
     margin-right: 0;
 }
-@media screen and (max-width:620px) {
-    
+@media screen and (max-width:790px) {
+    .filter
+    {
+        display: block;
+    }
+    .filterDate
+    {
+
+    }
+    .filterPage
+    {
+        
+    }
 }
