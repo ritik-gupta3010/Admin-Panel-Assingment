@@ -23,7 +23,7 @@ export class BottomData extends Component {
       <>
         <div>
             <div className='bottomData'>
-            <div className="data">{particularData && particularData.totalinstall ? moment(particularData.created_At).format("DD MMM YYYY"):0}</div>
+            <div className="data">{particularData && particularData.created_At ? moment(particularData.created_At).format("DD MMM YYYY"):0}</div>
             <div className="data">{particularData && particularData.totalinstall ?particularData.totalinstall :0}</div>
             <div className="data">
                 <div className="row">
