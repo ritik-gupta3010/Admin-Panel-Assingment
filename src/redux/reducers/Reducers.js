@@ -2,7 +2,7 @@ import moment from 'moment';
 const initialState={
     top:{},
     bottom:{},
-    limit:5,
+    limit:50,
     startD:"2022-04-01",
     endD:"2022-08-24",
     page:1
