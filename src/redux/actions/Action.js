@@ -3,7 +3,7 @@ import axios from 'axios';
 export const fetchTopData=()=>(dispatch,getState)=>{
     const{limit,startD,endD,page}=getState();
     console.log(startD) 
-    console.log(limit)
+    // console.log(limit)
     // console.log(getState())
     if((startD !==""|| startD!==null) && (endD !== "" && endD!==null))
     {
@@ -25,8 +25,8 @@ export const fetchTopData=()=>(dispatch,getState)=>{
 
 export const fetchBottomData=()=>(dispatch,getState)=>{
     const{limit,startD,endD,page}=getState();
-    console.log(startD) 
-    console.log(limit)
+    // console.log(startD) 
+    // console.log(limit)
     // console.log(getState())
     if((startD !==""|| startD!==null) && (endD !== "" && endD!==null))
     {
@@ -46,7 +46,7 @@ export const fetchBottomData=()=>(dispatch,getState)=>{
     }
 }
 export const setDataLimit=(limit)=>{
-    console.log(limit)
+    // console.log(limit)
     return dispatch=>{
         dispatch({
             type:'SET_LIMIT',
@@ -74,7 +74,7 @@ export const setDate=(date)=>{
 //     }
 // }
 export const setCurrentPage=(page)=>{
-    console.log(page)
+    // console.log("in action page",page)
     return dispatch=>{
         dispatch({
             type:"SETCURRPAGE",

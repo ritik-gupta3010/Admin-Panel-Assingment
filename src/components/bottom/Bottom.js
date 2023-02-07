@@ -5,15 +5,19 @@ import BottomData from "../bottomdata/index";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import Datepicker from "../datePicker/Datepicker";
-
+import ReactPaginate from 'react-paginate';
 
 export class bottom extends Component {
   componentDidMount(){
     const {fetchBottomData}=this.props;
+    // setTimeout(() => {
+    //   fetchBottomData();
+    // }, 2000);
     fetchBottomData();
 }
   handlePageChange=(e,value)=>{
     const {setCurrentPage,fetchBottomData}=this.props;
+    console.log("in bottom page",value)
     setCurrentPage(value)
     fetchBottomData();
     // fetchTopData();
@@ -27,10 +31,10 @@ export class bottom extends Component {
   }
   render() {
     const {reduxBottomVar}=this.props;
-    console.log()
+    // console.log("from redux",reduxBottomVar)
     const{setDate,fetchBottomData,page,fetchTopData}=this.props;
-    console.log(reduxBottomVar && reduxBottomVar[1] &&reduxBottomVar[1].data && reduxBottomVar[1].pages)
-    console.log(reduxBottomVar)
+    // console.log(reduxBottomVar && reduxBottomVar[1] &&reduxBottomVar[1].data && reduxBottomVar[1].pages)
+    // console.log(reduxBottomVar)
     return (
       <>
         <div className="bottom">
@@ -61,11 +65,11 @@ export class bottom extends Component {
             </div>
           </div>
           <Bottomnav />
-          {reduxBottomVar && reduxBottomVar[page] && reduxBottomVar[page].data.length!==0 ? 
-           reduxBottomVar && reduxBottomVar[page] && reduxBottomVar[page].data.map((data)=>(<BottomData particularData={data}/>))
+          {reduxBottomVar && reduxBottomVar.data && reduxBottomVar.data.length!==0 ? 
+           reduxBottomVar && reduxBottomVar.data && reduxBottomVar.data.map((data)=>(<BottomData particularData={data}/>))
            :(<h1 style={{color:'red' ,textAlign:'center',paddingBottom:'20px'}}>No record found</h1>)
           }
-          {reduxBottomVar && reduxBottomVar[page] && reduxBottomVar[page].data.length!==0 ?
+          {reduxBottomVar && reduxBottomVar.data && reduxBottomVar.data.length!==0 ?
           (<div className="pagination">
             <Stack
               spacing={2}
@@ -76,8 +80,8 @@ export class bottom extends Component {
               }}
             >
               <Pagination 
-              count={reduxBottomVar && reduxBottomVar[page] &&reduxBottomVar[page].data && reduxBottomVar[page].pages} 
-              color="secondary" 
+              count={reduxBottomVar.pages} 
+              // color="secondary" 
               onChange={(e,value)=>{this.handlePageChange(e,value)}}
               />
             </Stack>

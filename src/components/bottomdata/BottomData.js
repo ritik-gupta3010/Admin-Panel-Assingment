@@ -8,8 +8,9 @@ export class BottomData extends Component {
   render() {
     const {reduxBottomVar}=this.props;
     const{particularData}=this.props;
-    console.log(this.props.particularData)
-    console.log(reduxBottomVar)
+    // console.log("from redux in data",reduxBottomVar)
+    // console.log(this.props.particularData)
+    // console.log(reduxBottomVar)
     // console.log(reduxBottomVar.data)
     // reduxBottomVar.data && console.log(reduxBottomVar.data.current)
     // reduxBottomVar.data && console.log(reduxBottomVar.data.data)
