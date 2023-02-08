@@ -73,6 +73,7 @@ export class bottom extends Component {
               </div>
               <div>Entries</div>
             </div>
+            <br/>
             <div className="filterDate">
               <Datepicker 
               setDate={setDate}
