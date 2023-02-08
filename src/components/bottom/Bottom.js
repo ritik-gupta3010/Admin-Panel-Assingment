@@ -61,7 +61,7 @@ export class bottom extends Component {
               <div>Show</div>
               <div >
                 <select name="" id="" 
-                style={{height: '30px'}}
+                style={{height: '30px',color:"white",backgroundColor: "#283046"}}
                 onChange={(e)=>{this.handlePageLimit(e)}}
                 >
                   <option value="10">10</option>
