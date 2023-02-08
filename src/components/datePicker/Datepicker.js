@@ -181,6 +181,9 @@ export default function PaperContentComponent(props) {
                   svg: { color },
                   input: { color },
                   label: { color },
+                  '& label.Mui-focused': {
+                    color: 'white',
+                  },
                   '& .MuiOutlinedInput-root': {
                     '& fieldset': {
                       borderColor: 'white',
@@ -201,6 +204,9 @@ export default function PaperContentComponent(props) {
                   svg: { color },
                   input: { color },
                   label: { color },
+                  '& label.Mui-focused': {
+                    color: 'white',
+                  },
                   '& .MuiOutlinedInput-root': {
                     '& fieldset': {
                       borderColor: 'white',
