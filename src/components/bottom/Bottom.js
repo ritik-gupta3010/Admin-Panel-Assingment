@@ -5,14 +5,27 @@ import BottomData from "../bottomdata/index";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import Datepicker from "../datePicker/Datepicker";
-import ReactPaginate from 'react-paginate';
 
+import { withStyles } from '@material-ui/core/styles';
+
+// const useStyles = makeStyles(() => ({
+//   ul: {
+//     "& .MuiPaginationItem-root": {
+//       color: "#fff"
+//     }
+//   }
+// }));
+const styles = theme => ({
+  ul: {
+    "& .MuiPaginationItem-root": {
+      color: "white"
+    }
+  }
+});
 export class bottom extends Component {
   componentDidMount(){
     const {fetchBottomData}=this.props;
-    // setTimeout(() => {
-    //   fetchBottomData();
-    // }, 2000);
+    
     fetchBottomData();
 }
   handlePageChange=(e,value)=>{
@@ -29,12 +42,17 @@ export class bottom extends Component {
     fetchBottomData();
     // fetchTopData();
   }
+  
+
   render() {
     const {reduxBottomVar}=this.props;
     // console.log("from redux",reduxBottomVar)
     const{setDate,fetchBottomData,page,fetchTopData}=this.props;
     // console.log(reduxBottomVar && reduxBottomVar[1] &&reduxBottomVar[1].data && reduxBottomVar[1].pages)
     // console.log(reduxBottomVar)
+    // const classes = useStyles();
+    const { classes } = this.props;
+    
     return (
       <>
         <div className="bottom">
@@ -77,12 +95,16 @@ export class bottom extends Component {
                 backgroundColor: "#161C32",
                 borderRadius: "15px",
                 margin: "1% 0% 1% 1%",
+                color:"white"
               }}
             >
               <Pagination 
               count={reduxBottomVar.pages} 
-              // color="secondary" 
+              color="secondary" 
               onChange={(e,value)=>{this.handlePageChange(e,value)}}
+              style={{text:{color:"white"}}}
+              // sx={{ cursor: "pointer", color: "red" }}
+              className={classes.ul}
               />
             </Stack>
           </div>):null}
@@ -92,4 +114,4 @@ export class bottom extends Component {
   }
 }
 
-export default bottom;
+export default withStyles(styles)(bottom);

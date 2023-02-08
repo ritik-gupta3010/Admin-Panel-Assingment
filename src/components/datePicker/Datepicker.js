@@ -166,6 +166,7 @@ export default function PaperContentComponent(props) {
     props.fetchTopData();
     props.fetchBottomData();
   }
+  const color = "white";
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={4} alignItems="center" sx={{display:"block"}}>
@@ -174,10 +175,45 @@ export default function PaperContentComponent(props) {
           value={value}
           renderInput={(startProps, endProps) => (
             
-            <React.Fragment>
-              <TextField {...startProps} />
+            <React.Fragment >
+              <TextField {...startProps} 
+                sx={{
+                  svg: { color },
+                  input: { color },
+                  label: { color },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'white',
+                    },
+                  },
+                }}
+              />
               <Box sx={{ mx: 2 }}> to </Box>
-              <TextField {...endProps} />
+              <TextField {...endProps} 
+                sx={{
+                  
+                  svg: { color },
+                  input: { color },
+                  label: { color },
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'white',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: 'white',
+                      color:"white"
+                    },
+                  },
+                }}/>
             </React.Fragment>
           )}
           components={{ PaperContent: RangeShortcutsPanel }}
